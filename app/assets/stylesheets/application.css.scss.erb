@@ -1,0 +1,466 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+body {
+	font-family: 'Raleway', Arial, sans-serif;
+	font-size: 12pt;
+	letter-spacing: 2px;
+	background-image: url(http://www.sibagraphics.com/backs/images/wood/june0611.jpg);
+  background-attachment: fixed;
+}
+
+header {
+	background: rgb(122, 204, 200);
+	box-shadow: 0px 2px 8px black;
+	line-height:15px;
+	position: fixed;
+	top: 0;
+	left: 0; 
+	z-index: 21;
+	width: 100%;
+	padding-top: 13px 20px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+header a {
+	text-decoration: none;
+	color: white;
+}
+
+#adams_header {
+	background: white;
+	padding: 7px 20px 5px;
+}
+
+#adams_header a{
+	text-decoration: none;
+	color: black;
+}
+
+#adams_header ul{
+	float: right;
+	margin-left: 7%;
+}
+
+#adams_header li {
+	line-height: 18px;
+}
+
+#adams_header li:nth-child(2){
+	font-size: 10pt;
+}
+
+#adams_logo {
+	float: left;
+}
+
+#adams_logo img{
+	width: 150px;
+}
+
+#adams_logo p{
+	margin-top: -5px;
+	margin-left: -19px;
+	padding: 0 5px;
+	font-size: 8pt;
+}
+
+h1 {
+	text-transform: uppercase;
+	color: black;
+	font-size: 30px;
+	letter-spacing: 5px;
+	width: 100%;
+	padding: 20px 0px 15px;
+	cursor: pointer;
+	line-height: 30px;
+}
+
+h1, h2 {
+	padding-left: 20px;
+}
+
+h2 {
+	color: black;
+	line-height: 20px;
+	padding-bottom: 15px;
+	padding-right: 20px;
+}
+
+h3 {
+	padding-top: 10px;
+	font-size: 15pt;
+	line-height: 25px;
+}
+
+h4 {
+	font-weight: bold;
+	padding: 10px;
+}
+
+h3, h4 {
+	text-align: center;
+}
+
+p {
+	padding: 10px;
+}
+
+#menu {
+	width: 100%;
+	background: white/*#99161F*/;
+}
+
+#tags_list {
+	display: none;
+}
+
+#tags_list li{
+	padding: 10px 20px;
+}
+
+#open_menu {
+	height: 20px;
+	border-top: 1px solid black;
+	background: #6D9D31;
+	padding-bottom: 5px;
+	padding-top: 10px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+#open_menu:hover {
+	opacity: .8;
+}
+
+button,
+#buy_button {
+	/*background: rgb(122, 204, 200);*/
+	border: none;
+	letter-spacing: 2px;
+	font-size: 14px;
+	color: black;
+	border: 1px solid #6D9D31;
+	border-radius: 6px;
+	-o-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	/*box-shadow: 2px 2px 0px grey;*/
+	background: white;
+	/*font-weight: bold;*/
+	padding: 5px 9px;
+	margin: 4px;
+	/*border: 1px solid black;*/
+}
+
+#buy_button:hover,
+button:hover {
+	background: rgb(122, 204, 200);
+	color: white;
+	border: 1px solid rgb(122, 204, 200);
+}
+
+/* z-index can only be applied to an element that's absolutely positioned */
+#popup {
+	position: absolute;
+	z-index: 20;
+	display: none;
+}
+
+#popup_book {
+	background: white;
+	top: 28%;
+	left: 10%;
+	right: 10%;
+}
+
+#popup_book,
+.close_button {
+	box-shadow: 0px 2px 8px black;
+}
+
+#popup_book h3{
+	color: #6D9D31;
+}
+
+#popup_book,
+#popup_bkgd {
+	position: fixed;
+}
+
+#popup_bkgd {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	opacity: 0.6;
+}
+
+#book_description {
+	font-family: 'Droid Serif', serif;
+	letter-spacing: 1px;
+	line-height: 22px;
+	text-indent: 20px;
+}
+
+#buy_button {
+	margin: 20px 0;
+	float: right;
+	text-transform: uppercase;
+	background: #6D9D31;
+	color: white;
+}
+
+.arrow {
+	border: none;
+	border-radius: 0;
+	-o-border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	position: absolute;
+	height: 100%;
+	top: -4px;
+}
+
+.prev_button {
+	left: -4px;
+	border-right: 1px solid lightgrey;
+}
+
+.next_button {
+	right: -4px;
+	border-left: 1px solid lightgrey;
+}
+
+.close_button {
+	position: absolute;
+	top: 0;
+	right: -50px;
+	padding:10px 12px;
+	border: none;
+}
+
+#container {
+	float:left;
+  position:relative;
+  /*left:50%;*/
+  width: inherit;
+  margin-top: 200px;
+}
+
+#columns {
+	float:left;
+  position:relative;
+/*  left:-50%;*/
+  width: 100%;
+	padding: 20px;
+}
+
+.post_box {
+	background: white;
+	list-style:none;
+	box-shadow: 0px 2px 6px black;
+	display: inline-block;
+	overflow: hidden;
+	height: 300px;
+	float: left;
+	position: relative;
+	margin: 10px;
+	border: 4px solid white;
+	cursor: pointer;
+}
+
+.thumbnail,
+.modal_book_cover {
+	height: 300px;
+}
+
+.thumbnail {
+	float: left;
+}
+
+.modal_book_cover {
+	height: 300px;
+	padding: 20px 40px;
+}
+
+.modal_pic_div {
+	float: left;
+}
+
+.book_info {
+	padding:40px;
+}
+
+.book_hover {
+	display: none;
+  position: absolute;
+  color: white;
+  z-index: 4;
+  background: rgba(109, 157, 49, 0.9);
+  height: 500px;
+  overflow: hidden;
+  padding: 20px 0px;
+}
+
+.book_hover h1 {
+	padding: 6px;
+}
+
+#container link{
+	color: #2289E3;
+}
+
+footer {
+	background: white;
+	box-shadow: 0px 2px 8px black;
+	line-height:15px;
+	position: fixed;
+	bottom: 0;
+	left: 0; 
+	z-index: 21;
+	width: 100%;
+	padding-top: 13px 20px;
+	text-align: center;
+}
+
+footer li {
+	display: inline-block;
+}
+
+footer img {
+	height: 30px;
+	padding: 10px;
+}
+
+footer li:last-child img{
+	height: 25px;
+}
+
+@media only screen and (max-width : 995px) {
+
+	footer,
+	h2 {
+		display: none;
+	}
+
+	#adams_logo p {
+		display: none;
+	}
+
+	#popup_book {
+		top: 23%;
+	}
+
+}
+
+
+@media only screen and (max-width : 580px) {
+	
+	header ul,
+	#open_menu {
+		display: none;
+	}
+
+	h1 {
+		font-size: 10pt;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		letter-spacing: 1px;
+	}
+
+	#popup_book h3 {
+		padding-top: 0px;
+	}
+
+	#container {
+  	margin-top: 120px;
+  	float: none;
+  	padding: 0;
+	}
+
+	#columns {
+		padding: 0;
+	}
+
+	#popup {
+		z-index: 22;
+	}
+
+	#popup_book {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		box-shadow: none;
+		overflow: scroll;
+	}
+
+	.modal_book_cover {
+		width: 50%;
+		height: auto;
+		margin: 0 25%;
+		padding: 20px 10px;
+	}
+
+	.modal_pic_div {
+		float: none;
+	}
+
+	.modal_item {
+		padding-top: 0;
+	}
+
+	.close_button {
+		top: 20px;
+		right: 40px;
+		padding:10px 12px;
+	}
+
+	.post_box {
+		display: block;
+		float: none;
+		width: 50%;
+		height: auto;
+		margin: 5px 25%;
+		padding: 0px;
+	}
+
+	.thumbnail {
+		width: 100%;
+		height: auto;
+	}
+}

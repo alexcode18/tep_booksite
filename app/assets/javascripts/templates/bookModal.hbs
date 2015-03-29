@@ -1,0 +1,22 @@
+<div class="modal_box">
+	<button class="prev_button arrow"><</button>
+	<button class="next_button arrow">></button>
+	<div class="modal_item modal_pic_div">
+		<img class="modal_book_cover" src="http://img2.imagesbn.com/p/{{isbn}}_p0_v3_s260x420.JPG">
+	</div>
+	<div class="modal_item book_info">
+		<h3>{{title}}</h3>
+		<h4 class="author modal_p">{{author}}</h4>
+		<p>ISBN: {{isbn}}</p>
+		<p class="clearfix" id="book_description">{{description}}</p>
+		<a type="button" href="http://www.adamsbook.com/details.aspx?isbn={{isbn}}" target="_blank" id="buy_button">View Pricing &amp; More Info</a>
+		<div class="tags_container">
+			{{#each tags}}
+		    <button class="tag" id="{{id}}">{{name}}</button>
+		  {{/each}}
+		</div>
+	</div>
+	<div class="modal_item close">
+		<button class="close_button">x</button>
+	</div>
+</div>
