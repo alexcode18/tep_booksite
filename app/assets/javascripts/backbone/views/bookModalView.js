@@ -31,7 +31,7 @@
 			App.router.navigate('tags/' + App.tagID);
 		} else {
 			App.router.navigate('');
-		}	
+		}
 	},
 	show: function() {
 		this.$el.parent().css('display', 'block').hide().fadeIn();
