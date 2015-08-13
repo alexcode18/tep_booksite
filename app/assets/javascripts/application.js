@@ -50,7 +50,7 @@ $(function() {
 	App.books.fetch({
 		reset: true,
 		//The router can only be called after all the books have been fetched
-		success: function(){
+		success: function() {
 			console.log('finished loading books');
 			App.router.on('route:modalView', function(id){
 				App.bookModalView.showBook(App.books.get(id));
@@ -72,26 +72,17 @@ $(function() {
 	$('body').on('mouseleave', '#menu', displayTagMenu);
 	$('body').on('mousedown', 'h1', refreshPage);
 	$('body').on('mousedown', '#popup_bkgd', hideModal);
-	
-	window.onpopstate = function(event){    
-    if(history.state) {
-      location.reload(); 
-    }
-	}
-
 	//Infinite scroll feature was causing the tagged book modals to break, 
 	//because not all the book information was grabbed from the backend yet.
-	$(window).scroll(function(){
+	$(window).scroll(function() {
 		if ($(window).scrollTop() > $('body').height() / 2){
     	App.books.fetchMoreBooks();// ajax call get data from server and append to the div
     }
 	});
-	//it is key to set the pushState to true so 
-	//that the history acknowledges backbone route changes.
-	Backbone.history.start({pushState: false});
+
+	Backbone.history.start();
 });
 
-//reverts page to initial index
 function refreshPage(){
 	App.tagID = undefined;
 	App.offset = App.starterOffset;
@@ -100,9 +91,10 @@ function refreshPage(){
 	App.books.fetch({reset: true});
 	App.router.navigate('');
 	App.bookModalView.hide();
+	// App.booksListView = new App.Views.BooksListView({collection: App.books});
+	// App.books.fetch({reset: true});
 }
 
-//shows pop-up over index books
 function renderImageHover(){
 	var imageWidth = $(this).find('.thumbnail').css('width');
 	var imageHover = $(this).find('.book_hover');
@@ -110,13 +102,11 @@ function renderImageHover(){
 	imageHover.css('display', 'block').hide().fadeIn();
 }
 
-//removes hover from index books
 function hideImageHover(){
 	var imageHover = $(this).find('.book_hover');
 	imageHover.css('display', 'none');
 }
 
-//allows the top menu to unfold.
 function displayTagMenu(){
 	$('#tags_list').slideToggle({
 		duration: 800,
@@ -130,7 +120,7 @@ function displayTagMenu(){
 	});
 }
 
-function hideModal(){
+function hideModal() {
 	App.bookModalView.hide();
 }
 
